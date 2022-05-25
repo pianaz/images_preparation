@@ -36,7 +36,6 @@ def get_filename_as_int(filename):
 
 def resize(idx,img_dir,xmin,ymin,xmax,ymax):
     files=os.listdir(img_dir)
-    print(files[idx])
     imageToPredict = cv2.imread(os.path.join(img_dir,files[idx]), 3) 
     folder = "images/resized/"
 
@@ -46,10 +45,8 @@ def resize(idx,img_dir,xmin,ymin,xmax,ymax):
     targetSize = [450,800]
     x_scale = targetSize[1] / x_
     y_scale = targetSize[0] / y_
-    print(x_scale, y_scale)
     img = cv2.resize(imageToPredict, (targetSize[1], targetSize[0]));
     cv2.imwrite(os.path.join(folder,files[idx]),img)
-    print(img.shape)
     img = np.array(img)
 
     ymin = int(np.round(ymin * x_scale))
