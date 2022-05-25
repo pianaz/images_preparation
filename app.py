@@ -114,8 +114,8 @@ def convert(img_dir, xml_dir, json_file):
 
 
 if __name__ =='__main__':
-    if len(sys.argv) <= 1:
-        print('2 auguments are need.')
+    if len(sys.argv) <= 3:
+        print('3 auguments are need.')
         print('Usage: %s IMG_DIR XML_DIR OUTPU_JSON.json'%(sys.argv[0]))
         exit(1)
 
